@@ -20,8 +20,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.plcoding.contactscomposemultiplatform.contacts.domain.Contact
-import com.plcoding.contactscomposemultiplatform.contacts.domain.presentation.ContactListEvent
-import com.plcoding.contactscomposemultiplatform.contacts.domain.presentation.ContactListState
 import com.plcoding.contactscomposemultiplatform.contacts.presentation.widget.ContactListItemWidget
 
 @OptIn(ExperimentalMaterial3Api::class)

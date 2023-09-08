@@ -1,4 +1,4 @@
-package com.plcoding.contactscomposemultiplatform.contacts.domain.presentation
+package com.plcoding.contactscomposemultiplatform.contacts.presentation
 
 import com.plcoding.contactscomposemultiplatform.contacts.domain.Contact
 
