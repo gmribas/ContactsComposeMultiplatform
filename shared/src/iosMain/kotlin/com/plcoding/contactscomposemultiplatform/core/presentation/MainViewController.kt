@@ -1,6 +1,7 @@
 package com.plcoding.contactscomposemultiplatform.core.presentation
 
 import App
+import androidx.compose.ui.interop.LocalUIViewController
 import androidx.compose.ui.window.ComposeUIViewController
 import com.plcoding.contactscomposemultiplatform.di.AppModule
 import platform.UIKit.UIScreen
@@ -11,5 +12,10 @@ fun MainViewController() = ComposeUIViewController {
     val isDartTheme = UIScreen.mainScreen.traitCollection.userInterfaceStyle ==
             UIUserInterfaceStyle.UIUserInterfaceStyleDark
 
-    App(darkTheme = isDartTheme, dynamicColor = false, appModule = AppModule())
+    App(
+        darkTheme = isDartTheme,
+        dynamicColor = false,
+        appModule = AppModule(),
+        imagePicker = ImagePickerFactory(LocalUIViewController.current).createPicker()
+    )
 }

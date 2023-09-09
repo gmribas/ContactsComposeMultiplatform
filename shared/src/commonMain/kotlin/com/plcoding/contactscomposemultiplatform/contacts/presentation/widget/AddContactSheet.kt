@@ -114,7 +114,7 @@ fun AddContactSheet(
 
                 ContactTextField(
                     value = newContact?.email ?: "",
-                    placeholder = "First Name",
+                    placeholder = "E-mail",
                     error = state.emailError,
                     modifier = Modifier.fillMaxWidth(),
                     onValueChanged = {
@@ -126,7 +126,7 @@ fun AddContactSheet(
 
                 ContactTextField(
                     value = newContact?.phoneNumber ?: "",
-                    placeholder = "First Name",
+                    placeholder = "Phone number",
                     error = state.phoneNumberError,
                     modifier = Modifier.fillMaxWidth(),
                     onValueChanged = {

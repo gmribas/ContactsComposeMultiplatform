@@ -22,14 +22,20 @@ import androidx.compose.ui.unit.dp
 import com.plcoding.contactscomposemultiplatform.contacts.domain.Contact
 import com.plcoding.contactscomposemultiplatform.contacts.presentation.widget.AddContactSheet
 import com.plcoding.contactscomposemultiplatform.contacts.presentation.widget.ContactListItemWidget
+import com.plcoding.contactscomposemultiplatform.core.presentation.ImagePicker
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContactListScreen(
     state: ContactListState,
     newContact: Contact?,
-    onEvent: (ContactListEvent) -> Unit
+    onEvent: (ContactListEvent) -> Unit,
+    imagePicker: ImagePicker
     ) {
+
+    imagePicker.registerPicker { bytes ->
+        onEvent(ContactListEvent.OnPhotoPicked(bytes))
+    }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -73,6 +79,12 @@ fun ContactListScreen(
         state = state,
         newContact = newContact,
         isOpen = state.isAddContactSheetOpen,
-        onEvent = onEvent
+        onEvent = { event ->
+            if (event is ContactListEvent.OnAddPhotoClicked) {
+                imagePicker.pickImage()
+            } else {
+                onEvent(event)
+            }
+        }
     )
 }
