@@ -39,7 +39,7 @@ class ContactListViewModel(
 
     fun onEvent(event: ContactListEvent) {
         when(event) {
-            ContactListEvent.DeleteContent -> {
+            ContactListEvent.DeleteContact -> {
                 deleteContact()
             }
             ContactListEvent.DismissContact -> {

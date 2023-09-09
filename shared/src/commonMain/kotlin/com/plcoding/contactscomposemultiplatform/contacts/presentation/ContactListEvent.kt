@@ -22,5 +22,5 @@ sealed interface ContactListEvent {
 
     data class EditContact(val contact: Contact): ContactListEvent
 
-    object DeleteContent: ContactListEvent
+    object DeleteContact: ContactListEvent
 }
