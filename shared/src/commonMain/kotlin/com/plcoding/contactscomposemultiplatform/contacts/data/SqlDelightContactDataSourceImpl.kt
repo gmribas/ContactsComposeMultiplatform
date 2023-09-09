@@ -1,8 +1,8 @@
 package com.plcoding.contactscomposemultiplatform.contacts.data
 
+import com.plcoding.conactscomposemultiplatform.com.ContactDatabase
 import com.plcoding.contactscomposemultiplatform.contacts.domain.Contact
 import com.plcoding.contactscomposemultiplatform.contacts.domain.ContactDataSource
-import com.plcoding.contactscomposemultiplatform.database.ContactDatabase
 import com.squareup.sqldelight.runtime.coroutines.asFlow
 import com.squareup.sqldelight.runtime.coroutines.mapToList
 import kotlinx.coroutines.flow.Flow
@@ -37,7 +37,7 @@ class SqlDelightContactDataSourceImpl(
 
     override suspend fun insertContact(contact: Contact) {
         with(contact) {
-            queries.insertContactEntity(
+            queries.insertContact(
                 id = id,
                 firstName = firstName,
                 lastName = lastName,
